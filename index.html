@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Solar System Explorer</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    #loading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      z-index: 1000;
+    }
+    #loading h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    #loading .progress {
+      width: 300px;
+      height: 20px;
+      background: #222;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    #loading .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #00a1ff, #00ff9d);
+      width: 0%;
+      transition: width 0.3s;
+    }
+    #welcome {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      max-width: 500px;
+      z-index: 100;
+    }
+    #welcome button {
+      background: #00a1ff;
+      border: none;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+    #welcome button:hover {
+      background: #0084d1;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <h1>Loading Solar System Explorer</h1>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <p id="loadingStatus">Loading resources...</p>
+  </div>
+  
+  <div id="welcome" style="display:none;">
+    <h1>Welcome to Solar System Explorer!</h1>
+    <p>Fly through our solar system as a space explorer. Visit each planet to discover fascinating facts about our cosmic neighborhood.</p>
+    <h3>Controls:</h3>
+    <p>
+      <strong>F</strong>: Toggle Flying Mode<br>
+      <strong>V</strong>: Switch between First/Third Person View<br>
+      <strong>W/S</strong>: Move Forward/Backward<br>
+      <strong>A/D</strong>: Rotate Left/Right<br>
+      <strong>Space/Shift</strong>: Move Up/Down
+    </p>
+    <button id="startExploring">Start Exploring!</button>
+  </div>
+  
+  <script type="module" src="index.js"></script>
+  <script>
+    // Simulate loading progress
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += Math.random() * 10;
+      if (progress > 100) {
+        progress = 100;
+        clearInterval(interval);
+        
+        // Hide loading screen and show welcome
+        setTimeout(() => {
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('welcome').style.display = 'block';
+        }, 500);
+      }
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('loadingStatus').textContent = 
+        progress < 100 ? `Loading resources... ${Math.floor(progress)}%` : 'Ready to launch!';
+    }, 300);
+    
+    // Start exploring button
+    document.getElementById('startExploring').addEventListener('click', () => {
+      document.getElementById('welcome').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
