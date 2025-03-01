@@ -4,11 +4,17 @@ An interactive 3D solar system simulation built with **Three.js**, featuring an 
 
 ## 🌌 Features
 - **Realistic Solar System**: Planets orbit the sun with accurate scaling and textures.
-- **Astronaut Exploration**: Move around planets and fly through space.
+- **Astronaut Exploration**: Move around planets and fly through space as **Buzz Lightyear**.
 - **First-Person & Third-Person Views**: Toggle between views for different experiences.
 - **Dynamic Lighting & Shadows**: Enhanced visuals for immersive exploration.
 - **Informative Facts**: Learn about each planet by interacting with them.
 - **Starfield Background**: A realistic deep-space experience.
+
+## 📷 Visuals 
+- **First Person Experience**
+![image](https://github.com/user-attachments/assets/ad294c6e-302e-48da-b301-556eca318a74)
+- Proximity Based Exploration
+  ![image](https://github.com/user-attachments/assets/9657ba4f-83d8-4f77-a43b-7f440b6ed5a9)
 
 ## 🛠️ Installation
 1. Clone the repository:
