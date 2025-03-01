@@ -39,6 +39,8 @@ An interactive 3D solar system simulation built with **Three.js**, featuring an 
 | `F` | Toggle flying mode |
 
 ## 📦 Project Root
+```
+
 ├── 📁 models
 │   ├── buzz_lightyear.glb  # 3D model
 ├── 📁 textures
@@ -51,6 +53,8 @@ An interactive 3D solar system simulation built with **Three.js**, featuring an 
 ├── 📄 index.js  # Main Three.js logic
 ├── 📄 package.json  # Project dependencies
 ├── 📄 package-lock.json  # Lock file
+```
+
 
 ## 🚀 Future Enhancements
 - 🌍 **More Planetary Details**: Atmospheric effects and better textures.
